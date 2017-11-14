@@ -1,0 +1,36 @@
+<br>
+<div>
+    <% if(!isFirstPage){ %>
+    <span class="prepage">
+      <a  href="?page=<%= page - 1 %>">上一页</a>
+      <a  href="?page=<%=  1  %>">首页</a>
+    </span>
+    <% } %>
+    <% if(isFirstPage){%>
+    <span class="prepage">
+                <a href="?page=<%= 1 %>"><%= 1 %></a>
+                <a href="?page=<%= 2 %>"><%= 2 %></a>
+                <a href="?page=<%= 3 %>"><%= 3 %></a>
+            </span>
+    <%}%>
+    <% if(isLastPage){%>
+    <span class="prepage">
+                <a href="?page=<%= page - 2 %>"><%= page - 2 %></a>
+                <a href="?page=<%= page -1  %>"><%= page - 1 %></a>
+                <a href="?page=<%= page  %>"><%= page  %></a>
+            </span>
+    <%}%>
+    <% if(!isFirstPage && !isLastPage){%>
+    <span class="prepage">
+                <a href="?page=<%= page - 1 %>"><%= page - 1 %></a>
+                <a href="?page=<%= page  %>"><%= page %></a>
+                <a href="?page=<%= page + 1 %>"><%= page + 1 %></a>
+            </span>
+    <%}%>
+    <% if (!isLastPage) { %>
+    <span class="nextpage">
+        <a href="?page=<%= page+1 %>">下一页</a>
+        <a  href="?page=<%=  num + 1  %>">末页</a>
+    </span>
+    <% } %>
+</div>
